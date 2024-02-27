@@ -1,9 +1,11 @@
-import { CardClassTileList } from "@/components/card_class_tile_list"
+import { NavBar } from "@/components/nav_bar"
 
 export default async function Home() {
+
   return (
     <main>
-      <CardClassTileList />
+      <NavBar/>
     </main>
   )
 }
+

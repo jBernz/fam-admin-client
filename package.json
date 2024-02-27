@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "dotenv": "^16.4.1",
+    "fam-types": "file:../fam-types",
     "next": "14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "react-select": "^5.8.0"
   },
   "devDependencies": {
     "@types/node": "^20",
