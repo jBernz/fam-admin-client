@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "dotenv": "^16.4.1",
+    "fam-shared-components": "file:../fam-shared-components",
     "fam-types": "file:../fam-types",
     "next": "14.1.0",
     "react": "^18",

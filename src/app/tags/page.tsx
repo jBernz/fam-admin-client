@@ -1,7 +1,7 @@
-import { TagFormTile } from "@/components/form_tile_list/tag_form_tile"
-import { FormTileList } from "@/components/form_tile_list"
+import { FormTileList } from "@/components/form_tile_list/form_tile_list"
 import { getAllTags } from "@/data/tags"
 import { NavBar } from "@/components/nav_bar"
+import { TagFormFields } from "@/components/form_tile_list/form_fields/tag_form_fields"
 
 export default async function Families() {
 
@@ -17,8 +17,9 @@ export default async function Families() {
       <NavBar/>
       <FormTileList 
         data={familyData} 
-        TileComponent={TagFormTile}
+        FormFields={TagFormFields}
         newItem={newTag}
+        saveType={'Tag'}
       />
     </main>
   )

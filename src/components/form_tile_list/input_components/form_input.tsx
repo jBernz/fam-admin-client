@@ -4,7 +4,7 @@ export type FormInputProps = {
   id: string,
   label: string,
   value: string|number|undefined,
-  onChange: (value:string|number) => void,
+  onChange: (value:string) => void,
   type?: string
   disabled?: boolean
 }

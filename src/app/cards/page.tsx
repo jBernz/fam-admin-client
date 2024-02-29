@@ -1,8 +1,9 @@
-import { CardFormTile } from "@/components/form_tile_list/card_form_tile"
-import { FormTileList } from "@/components/form_tile_list"
-import { getAllCards } from "@/data/cards"
+import { FormTileList } from "@/components/form_tile_list/form_tile_list"
+import { getAllCards, postCard } from "@/data/cards"
 import { CardType } from 'fam-types'
 import { NavBar } from "@/components/nav_bar"
+import { CardFormFields } from "@/components/form_tile_list/form_fields/card_form_fields"
+import CardDisplay from "@/components/wrapped_components/card_display"
 
 export default async function Cards() {
 
@@ -20,8 +21,10 @@ export default async function Cards() {
       <NavBar/>
       <FormTileList 
         data={cardData} 
-        TileComponent={CardFormTile}
+        FormFields={CardFormFields}
         newItem={newCard}
+        saveType={'Card'}
+        DisplayComponent={CardDisplay}
       />
     </main>
   )
