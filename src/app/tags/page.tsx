@@ -1,26 +1,11 @@
-import { FormTileList } from "@/components/form_tile_list/form_tile_list"
 import { getAllTags } from "@/data/tags"
-import { NavBar } from "@/components/nav_bar"
-import { TagFormFields } from "@/components/form_tile_list/form_fields/tag_form_fields"
+import TagEditor from "./tag_editor"
 
-export default async function Families() {
+export default async function Tags() {
 
-  const familyData = await getAllTags()
-  const newTag = {
-    _id: undefined,
-    name: '',
-    description: ''
-  }
+  const data = await getAllTags()
 
   return (
-    <main>
-      <NavBar/>
-      <FormTileList 
-        data={familyData} 
-        FormFields={TagFormFields}
-        newItem={newTag}
-        saveType={'Tag'}
-      />
-    </main>
+    <TagEditor data={data}/>
   )
 }

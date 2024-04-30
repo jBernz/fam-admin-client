@@ -1,8 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Alegreya, Cousine } from "next/font/google"
 import "./globals.css";
+import { NavBar } from "@/components/nav_bar"
+import { Title } from "@/components/elements/title"
 
-const inter = Inter({ subsets: ["latin"] });
+const serif = Alegreya({
+  subsets: ["latin"],
+  display: 'swap',
+  variable: '--font-serif'
+})
+const mono = Cousine({ 
+  weight: ["400"],
+  display: 'swap', 
+  subsets: ["latin"],
+  variable: '--font-mono'
+})
+const globalClasses = 'font-serif'
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,8 +28,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className='h-screen'>
+      <body className={`
+        ${serif.variable} 
+        ${mono.variable} 
+        font-serif p-5 h-full w-full flex flex-col
+      `}>
+        <Title/>
+        <NavBar/>
+        <main className='flex-[2_2_0%] overflow-hidden'>
+          {children}
+        </main>
+      </body>
     </html>
   );
 }

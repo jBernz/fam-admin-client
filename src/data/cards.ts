@@ -14,8 +14,8 @@ export async function postCard(payload:Card):Promise<Card> {
   return res.json()
 }
 
-export async function deleteCard(id:string, type: CardType) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/cards/${type}/${id}`, {
+export async function deleteCard(card:Card) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/cards/${card.type}/${card._id}`, {
     method: 'delete'
   })
   return res

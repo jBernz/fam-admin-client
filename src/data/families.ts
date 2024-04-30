@@ -14,8 +14,8 @@ export async function postFamily(payload:Family):Promise<Family> {
   return res.json()
 }
 
-export async function deleteFamily(id:string) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/families/${id}`, {
+export async function deleteFamily(family:Family) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/families/${family._id}`, {
     method: 'delete'
   })
   return res

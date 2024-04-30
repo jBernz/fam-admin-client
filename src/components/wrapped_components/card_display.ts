@@ -1,4 +1,4 @@
 'use client'
 
-import { CardDisplay } from "fam-shared-components"
+import { CardDisplay } from "../display/card_display"
 export default CardDisplay

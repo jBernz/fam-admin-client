@@ -14,8 +14,8 @@ export async function postTag(payload:Tag):Promise<Tag> {
   return res.json()
 }
 
-export async function deleteTag(id:string) {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/tags/${id}`, {
+export async function deleteTag(tag:Tag) {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_BASE_URL}/tags/${tag._id}`, {
     method: 'delete'
   })
   return res
